@@ -1,0 +1,159 @@
+/* Reset dan Base Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.detail-container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.header h1 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 28px;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.back-button:hover {
+    background-color: #2980b9;
+}
+
+.content {
+    display: flex;
+    gap: 30px;
+}
+
+.photo-section {
+    flex: 1;
+}
+
+.photo-large {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.no-photo {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    color: #7f8c8d;
+    font-size: 18px;
+}
+
+.no-photo i {
+    font-size: 60px;
+    margin-bottom: 15px;
+}
+
+.info-section {
+    flex: 2;
+}
+
+.info-card {
+    background-color: #f8f9fa;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.info-card h2 {
+    margin-top: 0;
+    color: #2c3e50;
+    font-size: 22px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.info-row {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.label {
+    font-weight: 600;
+    color: #34495e;
+    width: 150px;
+    flex-shrink: 0;
+}
+
+.value {
+    flex-grow: 1;
+    color: #2c3e50;
+}
+
+.footer-actions {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.action-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 25px;
+    background-color: #2ecc71;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.action-button:hover {
+    background-color: #27ae60;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+    
+    .photo-large {
+        max-height: 300px;
+    }
+    
+    .info-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .label {
+        width: auto;
+    }
+}

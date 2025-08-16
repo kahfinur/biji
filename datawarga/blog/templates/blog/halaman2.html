@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'blog/css/halaman2.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Data Warga Terdaftar</h1>
+        <form method="get" action="" class="search-form" style="display:inline-block; margin-left:30px;">
+            <input type="text" class="search-input" name="q" placeholder="Cari data warga..." value="{{ request.GET.q }}">
+            <button type="submit" class="search-btn">Cari</button>
+        <table class="warga-table">
+            <thead>
+                <tr>
+                    <th>Foto</th>
+                    <th>Nama</th>
+                    <th>Alamat</th>
+                    <th>Panel/Daerah</th>
+                    <th>Tanggal Daftar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for warga in daftar_warga %}
+                <tr>
+                    <td>
+                        {% if warga.foto %}
+                        <a href="{% url 'detail_warga' warga.id %}">
+                            <img src="{{ warga.foto.url }}" width="50" class="thumbnail">
+                        </a>
+                        {% else %}
+                        <span class="no-photo">No Photo</span>
+                        {% endif %}
+                    </td>
+                    <td>{{ warga.nama }}</td>
+                    <td>{{ warga.alamat }}</td>
+                    <td>{{ warga.rt }}/{{ warga.rw }}</td>
+                    <td>{{ warga.created_at|date:"d M Y" }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5" class="empty-data">Belum ada data warga</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        <a href="{% url 'halaman1' %}" class="add-btn">+ Tambah Warga Baru</a>
+    </div>
+</body>
+</html>
