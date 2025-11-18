@@ -1,0 +1,23 @@
+{
+    "server": {
+        "host": "0.0.0.0",
+        "port": 4444,
+        "max_clients": 10
+    },
+    "security": {
+        "allowed_ips": ["192.168.1.0/24"],
+        "admin_password": "change_this_password",
+        "encryption_enabled": false
+    },
+    "logging": {
+        "enabled": true,
+        "log_file": "rat_server.log",
+        "log_level": "INFO"
+    },
+    "features": {
+        "file_transfer": true,
+        "screenshot": true,
+        "persistence": true,
+        "stealth_mode": false
+    }
+}
